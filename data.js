@@ -1,4 +1,4 @@
-export const lakes = [
+ const lakes = [
   {
     id: 1,
     name: "Lake Chiemsee",
@@ -64,3 +64,12 @@ export const lakes = [
       "Situated in Lower Saxony, it's perfect for sailing and cycling. The best time to visit is from May to September.",
   },
 ];
+
+const lakesList = document.getElementsByClassName("lakes-list")[0];
+
+lakes.forEach((lake) => {
+  let lakePara = document.createElement("p");
+  let lakeParaText = document.createTextNode(`${lake.name}`);
+  lakePara.appendChild(lakeParaText);
+  lakesList.appendChild(lakePara);
+});

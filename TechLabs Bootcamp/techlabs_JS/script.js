@@ -1,4 +1,4 @@
-import { lakes } from "data.js";
+import { lakes } from "./data.js";
 
 const lakesList = document.getElementsByClassName("lakes-list")[0];
 

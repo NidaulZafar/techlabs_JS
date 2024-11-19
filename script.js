@@ -60,7 +60,7 @@ addBtn.onclick = function () {
     alert("Please enter which lake you would like to visit.");
   } else {
     lakeWishList.appendChild(lakeListItem);
-  }q
+  }
 
   deleteBtn.onclick = function () {
     lakeWishList.removeChild(lakeListItem);

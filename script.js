@@ -37,6 +37,7 @@ const deleteLake = (id) => {
   renderLakes();
 };
 
+
 // For adding lakes to the "Lakes Wish List" form input
 
 const input = document.getElementById("added-lake");
@@ -60,9 +61,12 @@ addBtn.onclick = function () {
     alert("Please enter which lake you would like to visit.");
   } else {
     lakeWishList.appendChild(lakeListItem);
-  }q
+  }
 
   deleteBtn.onclick = function () {
     lakeWishList.removeChild(lakeListItem);
   };
 };
+
+
+

@@ -97,6 +97,18 @@ h4 {
   color: var(--gold);
 }
 
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 5px;
+}
+
+li span {
+  padding-right: 10px;
+}
+
 /* Grid container*/
 
 .container {

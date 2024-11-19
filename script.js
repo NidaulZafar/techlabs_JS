@@ -36,3 +36,33 @@ const deleteLake = (id) => {
   lakeData = lakeData.filter((lake) => lake.id !== id);
   renderLakes();
 };
+
+// For adding lakes to the "Lakes Wish List" form input
+
+const input = document.getElementById("added-lake");
+const addBtn = document.getElementsByClassName("add-btn")[0];
+const lakeWishList = document.getElementsByClassName("lake-wish-list")[0];
+
+addBtn.onclick = function () {
+  const currentInput = input.value;
+  input.value = "";
+
+  const lakeListItem = document.createElement("li");
+  const lakeName = document.createElement("span");
+  const deleteBtn = document.createElement("button");
+
+  lakeListItem.appendChild(lakeName);
+  lakeName.innerHTML = currentInput;
+  lakeListItem.appendChild(deleteBtn);
+  deleteBtn.innerHTML = "Delete";
+
+  if (!currentInput) {
+    alert("Please enter which lake you would like to visit.");
+  } else {
+    lakeWishList.appendChild(lakeListItem);
+  }q
+
+  deleteBtn.onclick = function () {
+    lakeWishList.removeChild(lakeListItem);
+  };
+};

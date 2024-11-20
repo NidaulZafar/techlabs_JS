@@ -1,6 +1,10 @@
 import { lakes } from "./data.js";
 
 const lakesContainer = document.getElementById("lakes-container");
+const lakeForm = document.getElementById("lake-form");
+const lakeNameInput = document.getElementById("lake-name");
+const lakeDescriptionInput = document.getElementById("lake-description");
+const lakeImageInput = document.getElementById("lake-image");
 
 let lakeData = [...lakes];
 
@@ -36,3 +40,18 @@ const deleteLake = (id) => {
   lakeData = lakeData.filter((lake) => lake.id !== id);
   renderLakes();
 };
+
+const addLake = (event) => {
+  event.preventDefault();
+  const newLake = {
+    id: lakeData.length + 1,
+    name: lakeNameInput.value,
+    description: lakeDescriptionInput.value,
+    image: lakeImageInput.value,
+  };
+  lakeData.push(newLake);
+  renderLakes();
+  lakeForm.reset();
+};
+
+lakeForm.addEventListener("submit", addLake);

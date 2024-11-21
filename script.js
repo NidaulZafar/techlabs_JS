@@ -39,7 +39,7 @@ const deleteLake = (id) => {
 
 // For adding lakes to the "Lakes Wish List" form input
 
-const imgInput = document.getElementById("add-lake-img");
+//const imgInput = document.getElementById("add-lake-img");
 const nameInput = document.getElementById("add-lake-name");
 const descriptionInput = document.getElementById("add-lake-description");
 const addBtn = document.getElementsByClassName("add-btn")[0];
@@ -50,17 +50,17 @@ addBtn.onclick = function () {
   nameInput.value = "";
   const currentDescriptionInput = descriptionInput.value;
   descriptionInput.value = "";
-  const currentImgInput = imgInput.file;
-  imgInput.file = "";
+  // const currentImgInput = imgInput.file;
+  // imgInput.file = "";
 
   const newLakeListItem = document.createElement("li");
-  const newLakeImg = document.createElement("img");
+  // const newLakeImg = document.createElement("img");
   const newLakeName = document.createElement("h4");
   const newLakeDescription = document.createElement("p");
   const deleteBtn = document.createElement("button");
 
-  newLakeListItem.appendChild(newLakeImg);
-  newLakeImg = currentImgInput;
+  // newLakeListItem.appendChild(newLakeImg);
+  // newLakeImg = currentImgInput;
   newLakeListItem.appendChild(newLakeName);
   newLakeName.innerHTML = currentNameInput;
   newLakeListItem.appendChild(newLakeDescription);

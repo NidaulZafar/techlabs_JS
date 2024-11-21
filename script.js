@@ -37,36 +37,44 @@ const deleteLake = (id) => {
   renderLakes();
 };
 
-
 // For adding lakes to the "Lakes Wish List" form input
 
-const input = document.getElementById("added-lake");
+const imgInput = document.getElementById("add-lake-img");
+const nameInput = document.getElementById("add-lake-name");
+const descriptionInput = document.getElementById("add-lake-description");
 const addBtn = document.getElementsByClassName("add-btn")[0];
 const lakeWishList = document.getElementsByClassName("lake-wish-list")[0];
 
 addBtn.onclick = function () {
-  const currentInput = input.value;
-  input.value = "";
+  const currentNameInput = nameInput.value;
+  nameInput.value = "";
+  const currentDescriptionInput = descriptionInput.value;
+  descriptionInput.value = "";
+  const currentImgInput = imgInput.file;
+  imgInput.file = "";
 
-  const lakeListItem = document.createElement("li");
-  const lakeName = document.createElement("span");
+  const newLakeListItem = document.createElement("li");
+  const newLakeImg = document.createElement("img");
+  const newLakeName = document.createElement("h4");
+  const newLakeDescription = document.createElement("p");
   const deleteBtn = document.createElement("button");
 
-  lakeListItem.appendChild(lakeName);
-  lakeName.innerHTML = currentInput;
-  lakeListItem.appendChild(deleteBtn);
+  newLakeListItem.appendChild(newLakeImg);
+  newLakeImg = currentImgInput;
+  newLakeListItem.appendChild(newLakeName);
+  newLakeName.innerHTML = currentNameInput;
+  newLakeListItem.appendChild(newLakeDescription);
+  newLakeDescription.innerHTML = currentDescriptionInput;
+  newLakeListItem.appendChild(deleteBtn);
   deleteBtn.innerHTML = "Delete";
 
-  if (!currentInput) {
+  if (!currentNameInput) {
     alert("Please enter which lake you would like to visit.");
   } else {
-    lakeWishList.appendChild(lakeListItem);
+    lakeWishList.appendChild(newLakeListItem);
   }
 
   deleteBtn.onclick = function () {
-    lakeWishList.removeChild(lakeListItem);
+    lakeWishList.removeChild(newLakeListItem);
   };
 };
-
-
-

@@ -444,3 +444,15 @@ footer > p {
   height: auto;
   display: block;
 }
+
+#add-lakes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.lake-wish-list {
+  padding-left: 0;
+}

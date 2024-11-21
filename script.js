@@ -37,6 +37,7 @@ const deleteLake = (id) => {
   renderLakes();
 };
 
+
 // For adding lakes to the "Lakes Wish List" form input
 
 const input = document.getElementById("added-lake");
@@ -66,3 +67,6 @@ addBtn.onclick = function () {
     lakeWishList.removeChild(lakeListItem);
   };
 };
+
+
+

@@ -57,8 +57,12 @@
           </div>
           <h3>Lakes Wish List</h3>
           <div id="add-lakes">
-            <label for="added-lake">Lake I'd like to visit:</label>
-            <input type="text" name="added-lake" id="added-lake">
+            <label for="add-lake-img">Image:</label>
+            <input type="file" name="add-lake-img" id="add-lake-img" accept=".png, .jpg, .jpeg">
+            <label for="add-lake-name">Lake I'd like to visit:</label>
+            <input type="text" name="add-lake-name" id="add-lake-name">
+            <label for="add-lake-description">Description:</label>
+            <textarea name="add-lake-description" cols="40" rows="5" id="add-lake-description"></textarea>
             <button class="add-btn">Add</button>
             <div id="new-lakes">
               <ul class="lake-wish-list">

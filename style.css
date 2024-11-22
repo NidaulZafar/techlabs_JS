@@ -368,39 +368,6 @@ footer > p {
     font-size: 1.125rem;
   }
 
-  /* Gallery */
-
-  .gallery-container {
-    display: grid;
-    width: 60vw;
-    margin: 0 auto;
-    gap: 32px;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: auto;
-    justify-items: center;
-  }
-
-  .gallery-container figure {
-    margin: 0;
-  }
-
-  .gallery-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.8;
-    transition: all 300ms ease-in;
-  }
-
-  .gallery-container img:hover {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-
-  .gallery-container figcaption {
-    display: none;
-  }
-
   /* About us*/
 
   .about-cards {

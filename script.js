@@ -1,6 +1,10 @@
 import { lakes } from "./data.js";
 
 const lakesContainer = document.getElementById("lakes-container");
+const lakeForm = document.getElementById("lake-form");
+const lakeNameInput = document.getElementById("lake-name");
+const lakeDescriptionInput = document.getElementById("lake-description");
+const lakeImageInput = document.getElementById("lake-image");
 
 let lakeData = [...lakes];
 
@@ -37,36 +41,17 @@ const deleteLake = (id) => {
   renderLakes();
 };
 
-
-// For adding lakes to the "Lakes Wish List" form input
-
-const input = document.getElementById("added-lake");
-const addBtn = document.getElementsByClassName("add-btn")[0];
-const lakeWishList = document.getElementsByClassName("lake-wish-list")[0];
-
-addBtn.onclick = function () {
-  const currentInput = input.value;
-  input.value = "";
-
-  const lakeListItem = document.createElement("li");
-  const lakeName = document.createElement("span");
-  const deleteBtn = document.createElement("button");
-
-  lakeListItem.appendChild(lakeName);
-  lakeName.innerHTML = currentInput;
-  lakeListItem.appendChild(deleteBtn);
-  deleteBtn.innerHTML = "Delete";
-
-  if (!currentInput) {
-    alert("Please enter which lake you would like to visit.");
-  } else {
-    lakeWishList.appendChild(lakeListItem);
-  }
-
-  deleteBtn.onclick = function () {
-    lakeWishList.removeChild(lakeListItem);
+const addLake = (event) => {
+  event.preventDefault();
+  const newLake = {
+    id: lakeData.length + 1,
+    name: lakeNameInput.value,
+    description: lakeDescriptionInput.value,
+    img: lakeImageInput.value,
   };
+  lakeData.push(newLake);
+  renderLakes();
+  lakeForm.reset();
 };
 
-
-
+lakeForm.addEventListener("submit", addLake);

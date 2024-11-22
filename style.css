@@ -254,6 +254,7 @@ h3 + p {
     width: 420px;
     height: 420px;
     display: block;
+    object-fit: cover;
   }
 
   /* Added Lakes */

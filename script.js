@@ -47,7 +47,7 @@ const addLake = (event) => {
     id: lakeData.length + 1,
     name: lakeNameInput.value,
     description: lakeDescriptionInput.value,
-    image: lakeImageInput.value,
+    img: lakeImageInput.value,
   };
   lakeData.push(newLake);
   renderLakes();

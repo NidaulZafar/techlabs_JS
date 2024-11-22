@@ -121,6 +121,26 @@ li span {
   padding-right: 10px;
 }
 
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 5px 5px gray;
+  position: relative;
+  transition: background-color 200ms ease-in;
+  background-color: var(--light-yellow);
+  border: none;
+}
+
+button:hover {
+  background-color: var(--yellow);
+}
+
+button:active {
+  top: 2px;
+  box-shadow: 3px 3px gray;
+  background-color: var(--gold);
+}
+
 /* Grid container*/
 
 .container {
@@ -216,29 +236,6 @@ main {
 
 h3 + p {
   color: white;
-}
-
-/* Gallery */
-
-#gallery {
-  margin-bottom: 2rem;
-}
-
-.gallery-container img {
-  max-width: 90vw;
-  min-height: 100%;
-}
-
-.gallery-container figcaption {
-  margin: 0 1rem 2.5rem;
-}
-
-.gallery-container h4 {
-  margin: 0.5rem 0rem 0.75rem;
-}
-
-.gallery-container p {
-  margin-top: 0;
 }
 
 /* About us*/
@@ -368,6 +365,45 @@ footer > p {
     font-size: 1.125rem;
   }
 
+  /* Gallery / Lakes Container */
+
+  #lakes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .lake-item {
+    max-width: 500px;
+    box-sizing: border-box;
+  }
+
+  .lake-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Added Lakes */
+
+  #lake-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 450px;
+    margin: 0 auto;
+    gap: 20px;
+    margin-bottom: 100px;
+  }
+
+  #lake-form input::placeholder,
+  #lake-form textarea::placeholder {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
   /* About us*/
 
   .about-cards {
@@ -401,59 +437,4 @@ footer > p {
   .about-card span {
     display: inline;
   }
-}
-
-#lakes-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.lake-item {
-  max-width: 500px;
-  box-sizing: border-box;
-}
-
-.lake-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-#lake-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 450px;
-  margin: 0 auto;
-  gap: 20px;
-  margin-bottom: 100px;
-}
-
-#lake-form input::placeholder,
-#lake-form textarea::placeholder {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-button {
-  padding: 10px 20px;
-  border-radius: 10px;
-  box-shadow: 5px 5px gray;
-  position: relative;
-  transition: background-color 200ms ease-in;
-  background-color: var(--light-yellow);
-  border: none;
-}
-
-button:hover {
-  background-color: var(--yellow);
-}
-
-button:active {
-  top: 2px;
-  box-shadow: 3px 3px gray;
-  background-color: var(--gold);
 }

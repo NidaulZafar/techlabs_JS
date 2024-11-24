@@ -49,6 +49,18 @@
   initial-value: #47a0d2;
 }
 
+@property --yellow-shadow {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #fbda0373;
+}
+
+@property --header {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #479fd2af;
+}
+
 /* Keyframes */
 
 @keyframes rotate-y-axis {
@@ -105,8 +117,24 @@ li {
   padding: 5px;
 }
 
-li span {
-  padding-right: 10px;
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 5px 5px gray;
+  position: relative;
+  transition: background-color 200ms ease-in;
+  background-color: var(--light-yellow);
+  border: none;
+}
+
+button:hover {
+  background-color: var(--yellow);
+}
+
+button:active {
+  top: 2px;
+  box-shadow: 3px 3px gray;
+  background-color: var(--gold);
 }
 
 /* Grid container*/
@@ -126,7 +154,7 @@ li span {
 /* Header */
 
 header {
-  background-color: #479fd2af;
+  background-color: var(--header);
   grid-area: header;
 }
 
@@ -181,7 +209,6 @@ main {
   position: relative;
   top: 112px;
   padding: 0.5rem 0rem;
-  background-color: #ffbb3396;
   color: var(--secondary-text);
 }
 
@@ -207,28 +234,45 @@ h3 + p {
   color: white;
 }
 
-/* Gallery */
+ /* Gallery / Lakes Container */
 
-#gallery {
-  margin-bottom: 2rem;
-}
+  #lakes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
 
-.gallery-container img {
-  max-width: 90vw;
-  min-height: 100%;
-}
+  .lake-item {
+    max-width: 500px;
+    box-sizing: border-box;
+  }
 
-.gallery-container figcaption {
-  margin: 0 1rem 2.5rem;
-}
+  .lake-item img {
+    width: 420px;
+    height: 420px;
+    display: block;
+    object-fit: cover;
+  }
 
-.gallery-container h4 {
-  margin: 0.5rem 0rem 0.75rem;
-}
+  /* Added Lakes */
 
-.gallery-container p {
-  margin-top: 0;
-}
+  #lake-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 450px;
+    margin: 0 auto;
+    gap: 20px;
+    margin-bottom: 100px;
+  }
+
+  #lake-form input::placeholder,
+  #lake-form textarea::placeholder {
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
 /* About us*/
 
@@ -238,7 +282,7 @@ h3 + p {
 }
 
 #about-us > h3 {
-  text-shadow: 3px 3px #fbda0373;
+  text-shadow: 3px 3px var(--yellow-shadow);
 }
 
 .about-cards {
@@ -319,7 +363,7 @@ footer > p {
   }
 
   nav a:hover {
-    color: #ffbb33ac;
+    color: var(--yellow);
   }
 
   /* Main */
@@ -357,38 +401,6 @@ footer > p {
     font-size: 1.125rem;
   }
 
-  /* Gallery */
-
-  .gallery-container {
-    display: grid;
-    width: 60vw;
-    margin: 0 auto;
-    gap: 32px;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: auto;
-    justify-items: center;
-  }
-
-  .gallery-container figure {
-    margin: 0;
-  }
-
-  .gallery-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.8;
-    transition: all 300ms ease-in;
-  }
-
-  .gallery-container img:hover {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-
-  .gallery-container figcaption {
-    display: none;
-  }
 
   /* About us*/
 
@@ -423,24 +435,4 @@ footer > p {
   .about-card span {
     display: inline;
   }
-}
-
-#lakes-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.lake-item {
-  max-width: 500px;
-  box-sizing: border-box;
-}
-
-.lake-item img {
-  width: 100%;
-  height: auto;
-  display: block;
 }
